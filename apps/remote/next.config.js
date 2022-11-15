@@ -1,13 +1,6 @@
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
 //@ts-check
 
-const remotes = isServer => {
-  const location = isServer ? 'ssr' : 'chunks';
-  return {
-    shell: `shell@http://localhost:4200/_next/static/${location}/remoteEntry.js`,
-  };
-};
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withNx } = require('@nrwl/next/plugins/with-nx');
 
@@ -26,9 +19,10 @@ const nextConfig = {
         name: 'remote',
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
+          './pages/index': './pages/index.tsx',
           './pages-map': './pages-map.js',
         },
-        remotes: remotes(options.isServer),
+        remotes: {},
         shared: {
           '@mui/material': {
             singleton: true,

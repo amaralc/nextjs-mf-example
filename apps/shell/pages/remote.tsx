@@ -1,9 +1,6 @@
-import HeroSection from '../components/HeroSection';
+import RemoteIndex from 'remote/pages/index';
 
-const Remote = () => {
-  return (
-    <HeroSection slug={'remote'} title={'Remote'} backgroundColor={'#33f'} />
-  );
-};
+const Page = RemoteIndex;
+Page.getInitialProps = RemoteIndex.getInitialProps;
 
-export default Remote;
+export default Page;

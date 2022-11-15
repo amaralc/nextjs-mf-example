@@ -1,3 +1,3 @@
 export default {
-  '/remote': './remote',
+  '/remote-index': './index',
 };

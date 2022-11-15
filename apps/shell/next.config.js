@@ -27,6 +27,7 @@ const nextConfig = {
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
           './components/HeroSection': './components/HeroSection.tsx',
+          // './pages/index':'./pages/index.tsx',
         },
         remotes: remotes(options.isServer),
         shared: {
