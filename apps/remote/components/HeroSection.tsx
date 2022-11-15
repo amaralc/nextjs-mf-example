@@ -6,7 +6,11 @@ interface IHeroSectionProps {
   backgroundColor: string;
 }
 
-const HeroSection = ({ slug, title, backgroundColor }: IHeroSectionProps) => {
+export const HeroSection = ({
+  slug,
+  title,
+  backgroundColor,
+}: IHeroSectionProps) => {
   return (
     <section id={slug} style={{ height: '50vh' }}>
       <Grid
@@ -20,5 +24,3 @@ const HeroSection = ({ slug, title, backgroundColor }: IHeroSectionProps) => {
     </section>
   );
 };
-
-export default HeroSection;
