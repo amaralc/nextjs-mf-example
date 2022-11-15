@@ -33,6 +33,10 @@ const nextConfig = {
           '@mui/material': {
             singleton: true,
             requiredVersion: false
+          },
+          '@emotion/react': {
+            singleton: true,
+            requiredVersion: false
           }
         },
         extraOptions:{
