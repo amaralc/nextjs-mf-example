@@ -1,12 +1,17 @@
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 
 //@ts-ignore
-const HeroSection = dynamic(() => import('shell/components/HeroSection'));
+const HeroSection = dynamic(() => import('shell/components/HeroSection'), {
+  suspense: true,
+});
 
 const Remote = () => {
   return (
-    //@ts-ignore
-    <HeroSection slug={'remote'} title={'Remote'} backgroundColor={'#33f'} />
+    <Suspense>
+      {/*@ts-ignore */}
+      <HeroSection slug={'remote'} title={'Remote'} backgroundColor={'#33f'} />
+    </Suspense>
   );
 };
 

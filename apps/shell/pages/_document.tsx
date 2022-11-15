@@ -1,8 +1,8 @@
 import createEmotionServer from '@emotion/server/create-instance'; // Material UI configuration
+import theme from '@project/ui/styles/theme';
+import createEmotionCache from '@project/ui/styles/utils/createEmotionCache'; // Material UI configuration
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import * as React from 'react';
-import createEmotionCache from '../utils/createEmotionCache'; // Material UI configuration
-import theme from '../styles/theme';
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -56,7 +56,8 @@ MyDocument.getInitialProps = async (ctx) => {
   ctx.renderPage = () =>
     originalRenderPage({
       // eslint-disable-next-line react/display-name
-      enhanceApp: (App: any) => (props) => <App emotionCache={cache} {...props} />,
+      enhanceApp: (App: any) => (props) =>
+        <App emotionCache={cache} {...props} />,
     });
 
   const initialProps = await Document.getInitialProps(ctx);
@@ -76,10 +77,12 @@ MyDocument.getInitialProps = async (ctx) => {
     />
   ));
 
-
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [...React.Children.toArray(initialProps.styles), ...emotionStyleTags],
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      ...emotionStyleTags,
+    ],
   };
 };
