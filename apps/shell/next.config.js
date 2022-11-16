@@ -25,10 +25,7 @@ const nextConfig = {
       new NextFederationPlugin({
         name: 'shell',
         filename: 'static/chunks/remoteEntry.js',
-        exposes: {
-          './components/HeroSection': './components/HeroSection.tsx',
-          // './pages/index':'./pages/index.tsx',
-        },
+        exposes: {},
         remotes: remotes(options.isServer),
         shared: {
           '@mui/material': {
