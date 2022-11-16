@@ -1,13 +1,19 @@
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 
 const HeroSection = dynamic(() => import('remote/components/HeroSection'), {
-  ssr: true,
+  suspense: true,
 });
 
 const Home = (props) => {
   console.log(props);
-  //@ts-ignore
-  return <HeroSection slug={'home'} title={'Home'} backgroundColor={'#333'} />;
+
+  return (
+    <Suspense>
+      {/* @ts-ignore */}
+      <HeroSection slug={'home'} title={'Home'} backgroundColor={'#333'} />
+    </Suspense>
+  );
 };
 
 export const getStaticProps = async () => {
