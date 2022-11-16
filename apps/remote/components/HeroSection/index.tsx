@@ -1,12 +1,7 @@
 import { Grid } from '@mui/material';
+import { IHeroSection } from './types';
 
-interface IHeroSectionProps {
-  title: string;
-  slug: string;
-  backgroundColor: string;
-}
-
-const HeroSection = ({ slug, title, backgroundColor }: IHeroSectionProps) => {
+const HeroSection: IHeroSection = ({ slug, title, backgroundColor }) => {
   return (
     <section id={slug} style={{ height: '50vh' }}>
       <Grid

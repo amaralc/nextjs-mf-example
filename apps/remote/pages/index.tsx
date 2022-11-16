@@ -1,9 +1,7 @@
+import HeroSection from '../components/HeroSection';
+
 const RemoteIndex = () => {
-  return (
-    <div>
-      <h1>Remote Index</h1>
-    </div>
-  );
+  return <HeroSection slug="remote" title="Remote" backgroundColor="#33f" />;
 };
 
 RemoteIndex.getInitialProps = async () => {

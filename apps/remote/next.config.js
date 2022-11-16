@@ -21,7 +21,7 @@ const nextConfig = {
         exposes: {
           './pages/index': './pages/index.tsx',
           './pages-map': './pages-map.js',
-          './components/HeroSection':'./components/HeroSection.tsx'
+          './components/HeroSection':'./components/HeroSection/index.tsx'
         },
         remotes: {},
         shared: {
